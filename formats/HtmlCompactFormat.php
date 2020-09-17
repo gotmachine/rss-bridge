@@ -107,11 +107,6 @@ EOD;
 	<meta name="robots" content="noindex, follow">
 </head>
 <body>
-	// <h1 class="pagetitle"><a href="{$uri}" target="_blank">{$title}</a></h1>
-	// <div class="buttons">
-	// <a href="./#bridge-{$_GET['bridge']}"><button class="backbutton">← back to rss-bridge</button></a>
-	// {$buttons}
-	// </div>
 {$entries}
 </body>
 </html>
