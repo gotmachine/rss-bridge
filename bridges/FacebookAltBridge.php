@@ -660,6 +660,8 @@ EOD;
 						
 						// get uri from embeded content
 						$uri = $post->find('._52c6')[0]->getAttribute('href');
+						if(strpos($uri, 'facebook.com/l.php?u=') !== false)
+							$uri = urldecode(extractFromDelimiters($uri, 'facebook.com/l.php?u=', '&'));
 						
 						if (empty($uri))
 						{
