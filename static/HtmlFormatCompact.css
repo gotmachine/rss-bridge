@@ -103,8 +103,7 @@ height: auto;
 }
 
 .feeditem >label:before {
-  font-family: FontAwesome;
-  content: "\f107";
+  content: "►";
   display: inline-block;
   margin-right: 5px;
   font-size: 1em;
@@ -113,8 +112,8 @@ height: auto;
   transition: 0.4s;
   
 }
-.feeditem > input[name="collapse"]:checked ~ .handle label:before {
-    transform: rotate(180deg);
+.feeditem > input[name="collapse"]:checked ~ .feeditem >label:before {
+    transform: rotate(90deg);
     transform-origin: center;
     transition: 0.4s;
 }
