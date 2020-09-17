@@ -608,49 +608,7 @@ EOD;
 
 					if(count($post->find('abbr')) > 0) {
 
-						$content = $post->find('._5pbx userContent _3576', 0);
-
-						// This array specifies filters applied to all posts in order of appearance
-						$content_filters = array(
-							'._5mly', // Remove embedded videos (the preview image remains)
-							'._2ezg', // Remove "Views ..."
-							'.hidden_elem', // Remove hidden elements (they are hidden anyway)
-							'.timestampContent', // Remove relative timestamp
-							'._6spk', // Remove redundant separator
-							'._3x-2', // GOT : remove embed completely
-						);
-
-						foreach($content_filters as $filter) {
-							foreach($content->find($filter) as $subject) {
-								$subject->outertext = '';
-							}
-						}
-
-						// Change origin tag for embedded media from div to paragraph
-						foreach($content->find('._59tj') as $subject) {
-							$subject->outertext = '<p>' . $subject->innertext . '</p>';
-						}
-
-						// Change title tag for embedded media from anchor to paragraph
-						foreach($content->find('._3n1k a') as $anchor) {
-							$anchor->outertext = '<p>' . $anchor->innertext . '</p>';
-						}
-
-						$content = preg_replace(
-							'/(?i)><div class=\"_3dp([^>]+)>(.+?)div\ class=\"[^u]+userContent\"/i',
-							'',
-							$content);
-
-						$content = preg_replace(
-							'/(?i)><div class=\"_4l5([^>]+)>(.+?)<\/div>/i',
-							'',
-							$content);
-
-						// Remove "SpSonsSoriSsés"
-						$content = preg_replace(
-							'/(?iU)<a [^>]+ href="#" role="link" [^>}]+>.+<\/a>/iU',
-							'',
-							$content);
+						$content = $post->find('.userContent', 0);
 
 						// Remove html nodes, keep only img, links, basic formatting
 						$content = strip_tags($content, '<a><img><i><u><br><p>');
