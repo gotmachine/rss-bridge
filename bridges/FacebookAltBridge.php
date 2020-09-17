@@ -659,7 +659,7 @@ EOD;
 							$title = substr($title, 0, strpos(wordwrap($title, 64), "\n")) . '...';
 						
 						// get uri from embeded content
-						$uri = $this->unescape_fb_link($post->find('._52c6')[0])->getAttribute('href');
+						$uri = $post->find('._52c6')[0]->getAttribute('href');
 						
 						if (empty($uri))
 						{
@@ -675,6 +675,11 @@ EOD;
 									$uri = substr($uri, 0, strpos($uri, '?'));
 								}
 							}
+						}
+						else
+						{
+							if(strpos($uri, 'facebook.com/l.php?u=') !== false)
+								$uri = urldecode(extractFromDelimiters($link, 'facebook.com/l.php?u=', '&'));	
 						}
 
 						//Build and add final item
