@@ -1,5 +1,5 @@
 <?php
-class HtmlFormat extends FormatAbstract {
+class HtmlCompactFormat extends FormatAbstract {
 	const MIME_TYPE = 'text/html';
 
 	public function stringify(){
