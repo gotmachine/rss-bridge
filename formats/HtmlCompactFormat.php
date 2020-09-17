@@ -38,7 +38,7 @@ class HtmlCompactFormat extends FormatAbstract {
 				. date('d-m-Y', $item->getTimestamp())
 				. '">'
 				. date('d-m-Y', $item->getTimestamp())
-				. '</time>';
+				. ' - </time>';
 			}
 
 			$entryContent = '';
@@ -81,8 +81,8 @@ class HtmlCompactFormat extends FormatAbstract {
 
 			$entries .= <<<EOD
 <section class="feeditem">
-	<h3><a class="itemtitle" href="{$entryUri}">{$entryTitle}</a></h2>
 	{$entryTimestamp}
+	<a class="itemtitle" href="{$entryUri}">{$entryTitle}</a>
 	{$entryContent}
 </section>
 EOD;
@@ -98,7 +98,7 @@ EOD;
 	<meta charset="{$charset}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>{$title}</title>
-	<link href="static/HtmlFormat.css" rel="stylesheet">
+	<link href="static/HtmlFormatCompact.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="static/favicon.png">
 	{$links}
 	<meta name="robots" content="noindex, follow">
