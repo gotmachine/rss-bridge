@@ -617,6 +617,7 @@ EOD;
 							'.hidden_elem', // Remove hidden elements (they are hidden anyway)
 							'.timestampContent', // Remove relative timestamp
 							'._6spk', // Remove redundant separator
+							'._3x-2', // GOT : remove embed completely
 						);
 
 						foreach($content_filters as $filter) {
@@ -652,7 +653,7 @@ EOD;
 							$content);
 
 						// Remove html nodes, keep only img, links, basic formatting
-						// $content = strip_tags($content, '<a><img><i><u><br><p>');
+						$content = strip_tags($content, '<a><img><i><u><br><p>');
 
 						$content = $this->unescape_fb_link($content);
 
