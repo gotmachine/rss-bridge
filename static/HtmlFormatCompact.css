@@ -34,7 +34,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	margin: 2px auto;
 	padding: 1px 1px;
 }
- section > .itemtitle {
+.handle > .itemtitle {
 	font-size: 100%;
 	font-weight: bold;
 }
@@ -78,11 +78,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	list-style-type: circle;
 	list-style-position: inside;
 }
- section > time, section > p.author {
-	font-weight: bold;
+.handle > time, section > p.author {
 	color: #888;
-	font-size: 80%;
-	padding: 5px;
+	font-size: 90%;
+	margin-right: 5px;
 }
 
 .feeditem > input[name="collapse"] {
@@ -96,27 +95,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .feeditem label {
-  color: #fff;
   cursor: pointer;
-  font-weight: normal;
-  padding: 10px;
-  background: #b0100c;
-  
-}
-.feeditem label:hover,
-.feeditem label:focus {
-  background: #252525;
 }
 
 .feeditem > input[name="collapse"]:checked ~ .content {
 height: auto;
 }
 
-.feeditem .handle label:before {
+.feeditem >label:before {
   font-family: FontAwesome;
   content: "\f107";
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 1em;
   line-height: 1.556em;
   vertical-align: middle;
