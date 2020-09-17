@@ -659,7 +659,7 @@ EOD;
 							$title = substr($title, 0, strpos(wordwrap($title, 64), "\n")) . '...';
 						
 						// get uri from embeded content
-						$uri = $post->find('._52c6')[0]->parent()->getAttribute('href');
+						$uri = $post->find('._52c6')[0]->getAttribute('href');
 						
 						if (empty($uri))
 						{
