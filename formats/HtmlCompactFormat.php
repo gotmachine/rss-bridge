@@ -43,7 +43,7 @@ class HtmlCompactFormat extends FormatAbstract {
 				. date('d-m-Y', $item->getTimestamp())
 				. '">'
 				. date('d-m-Y', $item->getTimestamp())
-				. ' - </time>';
+				. '</time>';
 			}
 
 			$entryContent = '';
