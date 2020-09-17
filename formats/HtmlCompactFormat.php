@@ -35,11 +35,7 @@ class HtmlCompactFormat extends FormatAbstract {
 			$checked = '';
 			if($entryCounter == 1)
 			{
-				$checked = 'true';
-			}
-			else
-			{
-				$checked = 'false';
+				$checked = 'checked';
 			}
 			
 			$entryAuthor = $item->getAuthor() ? '<br /><p class="author">by: ' . $item->getAuthor() . '</p>' : '';
@@ -95,7 +91,7 @@ class HtmlCompactFormat extends FormatAbstract {
 
 			$entries .= <<<EOD
 <section class="feeditem">
-	  <input type="radio" name="collapse" id="{$entryID}" checked="{$checked}">
+	  <input type="radio" name="collapse" id="{$entryID}" {$checked}>
 	  <label class="handle" for="{$entryID}">
 	    {$entryTimestamp}
 	    <a class="itemtitle" href="{$entryUri}">{$entryTitle}</a>
