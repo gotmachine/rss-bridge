@@ -95,8 +95,38 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	height: 0;
 }
 
+.feeditem label {
+  color: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 10px;
+  background: #b0100c;
+  
+}
+.feeditem label:hover,
+.feeditem label:focus {
+  background: #252525;
+}
+
 .feeditem > input[name="collapse"]:checked ~ .content {
 height: auto;
+}
+
+.feeditem .handle label:before {
+  font-family: FontAwesome;
+  content: "\f107";
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1em;
+  line-height: 1.556em;
+  vertical-align: middle;
+  transition: 0.4s;
+  
+}
+.feeditem > input[name="collapse"]:checked ~ .handle label:before {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: 0.4s;
 }
 
  button {
