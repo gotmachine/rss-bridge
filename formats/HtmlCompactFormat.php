@@ -81,12 +81,9 @@ class HtmlCompactFormat extends FormatAbstract {
 
 			$entries .= <<<EOD
 <section class="feeditem">
-	<h2><a class="itemtitle" href="{$entryUri}">{$entryTitle}</a></h2>
+	<h3><a class="itemtitle" href="{$entryUri}">{$entryTitle}</a></h2>
 	{$entryTimestamp}
-	{$entryAuthor}
 	{$entryContent}
-	{$entryEnclosures}
-	{$entryCategories}
 </section>
 EOD;
 		}
