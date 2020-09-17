@@ -35,11 +35,11 @@ class HtmlCompactFormat extends FormatAbstract {
 			$checked = '';
 			if($entryCounter == 1)
 			{
-				$checked = 'true'
+				$checked = 'true';
 			}
 			else
 			{
-				$checked = 'false'
+				$checked = 'false';
 			}
 			
 			$entryAuthor = $item->getAuthor() ? '<br /><p class="author">by: ' . $item->getAuthor() . '</p>' : '';
