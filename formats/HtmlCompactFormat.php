@@ -35,9 +35,9 @@ class HtmlCompactFormat extends FormatAbstract {
 			$entryTimestamp = '';
 			if($item->getTimestamp()) {
 				$entryTimestamp = '<time datetime="'
-				. date(DATE_ATOM, $item->getTimestamp())
+				. date('d-m-Y', $item->getTimestamp())
 				. '">'
-				. date(DATE_ATOM, $item->getTimestamp())
+				. date('d-m-Y', $item->getTimestamp())
 				. '</time>';
 			}
 
