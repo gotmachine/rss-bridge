@@ -657,17 +657,23 @@ EOD;
 						$title = strip_tags($post->find('.userContent', 0)->innertext);
 						if(strlen($title) > 64)
 							$title = substr($title, 0, strpos(wordwrap($title, 64), "\n")) . '...';
+						
+						// get uri from embeded content
+						$uri = $post->find('._52c6')[0]->parent()->getAttribute('href');
+						
+						if (empty($uri))
+						{
+							$uri = $post->find('abbr')[0]->parent()->getAttribute('href');
 
-						$uri = $post->find('abbr')[0]->parent()->getAttribute('href');
-
-						// Extract fbid and patch link
-						if (strpos($uri, '?') !== false) {
-							$query = substr($uri, strpos($uri, '?') + 1);
-							parse_str($query, $query_params);
-							if (isset($query_params['story_fbid'])) {
-								$uri = self::URI . $query_params['story_fbid'];
-							} else {
-								$uri = substr($uri, 0, strpos($uri, '?'));
+							// Extract fbid and patch link
+							if (strpos($uri, '?') !== false) {
+								$query = substr($uri, strpos($uri, '?') + 1);
+								parse_str($query, $query_params);
+								if (isset($query_params['story_fbid'])) {
+									$uri = self::URI . $query_params['story_fbid'];
+								} else {
+									$uri = substr($uri, 0, strpos($uri, '?'));
+								}
 							}
 						}
 
