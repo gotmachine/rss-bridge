@@ -82,7 +82,7 @@ class HtmlCompactFormat extends FormatAbstract {
 			$entries .= <<<EOD
 <section class="feeditem">
 	  <input type="radio" name="collapse" id="handle1" checked="checked">
-	  <h2 class="handle">
+	  <h2 class="handle" for="handle1">
 	    {$entryTimestamp}
 	    <a class="itemtitle" href="{$entryUri}">{$entryTitle}</a>
 	  </h2>
