@@ -94,7 +94,7 @@ class HtmlCompactFormat extends FormatAbstract {
 	  <input type="radio" name="collapse" id="{$entryID}" {$checked}>
 	  <label class="handle" for="{$entryID}">
 	    {$entryTimestamp}
-	    <a class="itemtitle" href="{$entryUri}">{$entryTitle}</a>
+	    <a class="itemtitle" target="_blank" href="{$entryUri}">{$entryTitle}</a>
 	  </label>
 	{$entryContent}
 </section>
