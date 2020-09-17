@@ -659,7 +659,7 @@ EOD;
 							$title = substr($title, 0, strpos(wordwrap($title, 64), "\n")) . '...';
 						
 						// get uri from embeded content
-						$uri = unescape_fb_link($post->find('._52c6')[0])->getAttribute('href');
+						$uri = $this->unescape_fb_link($post->find('._52c6')[0])->getAttribute('href');
 						
 						if (empty($uri))
 						{
