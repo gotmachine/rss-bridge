@@ -27,7 +27,12 @@ class HtmlCompactFormat extends FormatAbstract {
 		}
 
 		$entries = '';
+		$entryCounter = 0;
 		foreach($this->getItems() as $item) {
+			
+			$entryCounter = $entryCounter + 1;
+			$entryID = 'entry' . $entryCounter;
+			
 			$entryAuthor = $item->getAuthor() ? '<br /><p class="author">by: ' . $item->getAuthor() . '</p>' : '';
 			$entryTitle = $this->sanitizeHtml(strip_tags($item->getTitle()));
 			$entryUri = $item->getURI() ?: $uri;
@@ -81,8 +86,8 @@ class HtmlCompactFormat extends FormatAbstract {
 
 			$entries .= <<<EOD
 <section class="feeditem">
-	  <input type="radio" name="collapse" id="handle1" checked="checked">
-	  <label class="handle" for="handle1">
+	  <input type="radio" name="collapse" id="{$entryID}" checked="checked">
+	  <label class="handle" for="{$entryID}">
 	    {$entryTimestamp}
 	    <a class="itemtitle" href="{$entryUri}">{$entryTitle}</a>
 	  </label>
