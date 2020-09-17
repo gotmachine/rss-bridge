@@ -608,7 +608,7 @@ EOD;
 
 					if(count($post->find('abbr')) > 0) {
 
-						$content = $post->find('.userContentWrapper', 0);
+						$content = $post->find('._5pbx userContent _3576', 0);
 
 						// This array specifies filters applied to all posts in order of appearance
 						$content_filters = array(
