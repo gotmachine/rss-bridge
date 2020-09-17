@@ -676,11 +676,6 @@ EOD;
 								}
 							}
 						}
-						else
-						{
-							if(strpos($uri, 'facebook.com/l.php?u=') !== false)
-								$uri = urldecode(extractFromDelimiters($link, 'facebook.com/l.php?u=', '&'));	
-						}
 
 						//Build and add final item
 						$item['uri'] = htmlspecialchars_decode($uri, ENT_QUOTES);
